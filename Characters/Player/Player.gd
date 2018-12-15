@@ -31,28 +31,17 @@ func _process(delta):
         yield($spr,"animation_finished")
         print("Bien, has pasado el nivel")
         get_tree().quit()
-    
-    if $time_shield.is_stopped() == false and $spr.self_modulate.a8 != 100:
-        $spr.self_modulate.a8 -= 5
-    elif $time_shield.is_stopped() and $spr.self_modulate.a8 != 255:
-        $spr.self_modulate.a8 += 5
-        shield = false
 
     speed = 350
     jump_speed = 900
     gravity = 1300
     
     if Input.is_action_just_pressed("ui_down"):
-        $wepon.attack()
+        pass
 
 func _physics_process(delta):
     _move(delta)
 
-func _speak(text):
-    var container_text = load("res://Text/Label.tscn").instance()
-    container_text._text(text)
-    add_child(container_text)
-    text_actual = container_text
 
 func _move(delta):
     direction.x = int(Input.is_action_pressed("ui_right"))-int(Input.is_action_pressed("ui_left"))
