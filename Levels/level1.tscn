@@ -54,7 +54,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node" type="Node"]
+[node name="level1" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -84,27 +84,31 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="1" groups=[
+"playables",
+] instance=ExtResource( 2 )]
 
 position = Vector2( 330, 140 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Collision", "Pickable", "Z Index", "collision" ]
 
-[node name="Sapo" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Sapo" parent="." index="2" groups=[
+"playables",
+] instance=ExtResource( 4 )]
 
-position = Vector2( 563.452, 349.343 )
+position = Vector2( 585.638, 853.282 )
 scale = Vector2( 0.482716, 0.482716 )
 script = ExtResource( 5 )
 
-[node name="Tipito" parent="." index="3" instance=ExtResource( 6 )]
+[node name="Tipito" parent="." index="3" groups=[
+"playables",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 770.257, 812.871 )
 scale = Vector2( 0.507477, 0.507477 )
 script = ExtResource( 7 )
 
 [node name="TileMaps" type="Node2D" parent="." index="4"]
-
-editor/display_folded = true
 
 [node name="Glass" type="TileMap" parent="TileMaps" index="0" groups=[
 "block",
