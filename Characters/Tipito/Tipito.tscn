@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/tipito1.png" type="Texture" id=1]
-[ext_resource path="res://Assets/tipito2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/tipito3.png" type="Texture" id=3]
-[ext_resource path="res://Assets/tipito-ataque1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/tipito-ataque2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/tipito-ataque3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/tipito-ataque1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/tipito-ataque2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/tipito-ataque3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/tipito2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/tipito3.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -15,28 +15,38 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "jump",
+"name": "attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "move",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "attack",
+"name": "jump",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10.2909 )
+extents = Vector2( 9.19558, 10.2909 )
 
-[node name="Tipito" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 62.0045, 91.8848 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 50.5037, 75.6949 )
+
+[node name="Tipito" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -45,17 +55,47 @@ collision/safe_margin = 0.08
 
 [node name="spr" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( -118.614, -201.551 )
+position = Vector2( -70.1667, -8.06512 )
 frames = SubResource( 1 )
-animation = "attack"
-frame = 1
-centered = false
+animation = "default"
 
 [node name="col" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -18.1995, -7.72086 )
+position = Vector2( -73.9035, 19.0034 )
 scale = Vector2( 9.14197, 12.314 )
 shape = SubResource( 2 )
 disabled = true
+
+[node name="attackr" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="col" type="CollisionShape2D" parent="attackr" index="0"]
+
+position = Vector2( 75.4181, -27.0157 )
+shape = SubResource( 3 )
+
+[node name="attackl" type="Area2D" parent="." index="3"]
+
+position = Vector2( -279.445, 85.0496 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="col" type="CollisionShape2D" parent="attackl" index="0"]
+
+position = Vector2( 50.9547, -113.845 )
+scale = Vector2( 1.20009, 1.20279 )
+shape = SubResource( 4 )
 
 
