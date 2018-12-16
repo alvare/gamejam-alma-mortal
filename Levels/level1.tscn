@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Sapo/Sapo.tscn" type="PackedScene" id=2]
@@ -9,9 +9,23 @@
 [ext_resource path="res://Tiles/Decoration/tileset.res" type="TileSet" id=7]
 [ext_resource path="res://Characters/Nube/Nube.tscn" type="PackedScene" id=8]
 
+[sub_resource type="DynamicFontData" id=1]
+
+hinting = 2
+font_path = "res://Graphics/Font/kenvector_future.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 200
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [node name="level1" type="Node" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="camera" type="Camera2D" parent="." index="0"]
 
@@ -38,6 +52,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+_sections_unfolded = [ "Pause" ]
 
 [node name="Sapo" parent="." index="1" groups=[
 "playables",
@@ -133,5 +148,57 @@ scale = Vector2( 1.64234, 1.64234 )
 
 position = Vector2( 188.43, 155.303 )
 scale = Vector2( 1.64234, 1.64234 )
+
+[node name="label" type="Label" parent="." index="8"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 456.0
+margin_top = 527.0
+margin_right = 1543.0
+margin_bottom = 752.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.929688, 0.773861, 0.062479, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="restart" type="Button" parent="." index="9"]
+
+pause_mode = 2
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 839.0
+margin_top = 895.0
+margin_right = 1051.0
+margin_bottom = 967.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Restart"
+flat = false
+align = 1
+_sections_unfolded = [ "Pause", "Theme", "custom_colors" ]
 
 

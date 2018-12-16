@@ -13,13 +13,22 @@ var p2_lives = []
 
 func _ready():
     randomize()
-    $Sapo.set_p1()
-    $Tipito.set_p2()
+    $restart.connect("pressed", self, "_on_restart_pressed")
+    $Tipito.set_p1()
+    $Tipito2.set_p2()
+    $Tipito2/spr.flip_h = true;
+    
     var lives_left_x = 100
     var lives_right_x = 1650
-    for x in range(4):
+    for x in range(1):
         p1_lives.append(render_live(100*x + lives_left_x))
         p2_lives.append(render_live(100*x + lives_right_x))
+        
+    
+func _on_restart_pressed():
+    $restart.hide()
+    get_tree().paused = false
+    get_tree().reload_current_scene()
 
 func render_live(x):
     var live_inst = live.instance()
@@ -37,6 +46,13 @@ func get_random_playable():
     var playables = get_tree().get_nodes_in_group("playables")
     return playables[randi() % playables.size()]
     
+func win(msg):
+    $label.text = msg
+    $label.show()
+    $restart.show()
+    get_tree().paused = true
+    
+    
 func kill(x):
     add_explosion(x.position)
     x.queue_free()
@@ -44,10 +60,14 @@ func kill(x):
     if x.is_p1:
         var live = p1_lives.pop_back()
         live.queue_free()
+        if p1_lives.empty():
+            win("Player 2!")
         print(p1_lives)
     else:
         var live = p2_lives.pop_front()
         live.queue_free()
+        if p2_lives.empty():
+            win("Player 1!")
         print(p2_lives)
     
     var node = get_random_playable()
