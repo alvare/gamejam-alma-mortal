@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/tipito1.png" type="Texture" id=1]
-[ext_resource path="res://Assets/tipito-ataque1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/tipito-ataque2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/tipito-ataque3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/tipito2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/tipito3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/tipito2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/tipito3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/tipito-ataque1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/tipito-ataque2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/tipito-ataque3.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -15,21 +15,26 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "move",
-"speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10.2909 )
 
 [node name="Tipito" type="KinematicBody2D" index="0"]
 
@@ -44,5 +49,9 @@ frames = SubResource( 1 )
 animation = "default"
 
 [node name="col" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -25.1496, 12.2026 )
+scale = Vector2( 9.14197, 12.314 )
+shape = SubResource( 2 )
 
 

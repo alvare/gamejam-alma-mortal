@@ -6,12 +6,13 @@ extends Node
 
 var player1 = "Player"
 var player2 = "Sapo"
-var playables = ["Player", "Sapo"]
+var playables = ["Player", "Sapo", "Tipito"]
 
 func _ready():
     # Called when the node is added to the scene for the first time.
     # Initialization here
-    get_node(player1).set_p1()
+    $Player.set_p1()
+#    get_node("Sapo").set_p2()
     #$Sapo.set_p2()
 
 func _process(delta):
