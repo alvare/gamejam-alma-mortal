@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Sapo/Sapo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Sapo/Sapo.gd" type="Script" id=3]
 [ext_resource path="res://Characters/Tipito/Tipito.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Tipito/Tipito.gd" type="Script" id=5]
-[ext_resource path="res://Tiles/Glass/tileset.res" type="TileSet" id=6]
-[ext_resource path="res://Tiles/Decoration/tileset.res" type="TileSet" id=7]
-[ext_resource path="res://Characters/Nube/Nube.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Characters/Nube/Nube.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Tiles/Glass/tileset.res" type="TileSet" id=7]
+[ext_resource path="res://Tiles/Decoration/tileset.res" type="TileSet" id=8]
+[ext_resource path="res://Characters/Arbol/arbol.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -22,6 +23,19 @@ use_filter = false
 font_data = SubResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="DynamicFontData" id=3]
+
+hinting = 2
+font_path = "res://Graphics/Font/kenvector_future.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 50
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [node name="level1" type="Node" index="0"]
 
 script = ExtResource( 1 )
@@ -29,11 +43,11 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="camera" type="Camera2D" parent="." index="0"]
 
-position = Vector2( 1028.18, 700.016 )
+position = Vector2( 996.437, 832.254 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 1.5, 1.5 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -70,52 +84,59 @@ position = Vector2( 173.43, 594.144 )
 scale = Vector2( 0.482716, 0.482716 )
 script = ExtResource( 3 )
 
-[node name="Tipito" parent="." index="3" groups=[
+[node name="Sapo3" parent="." index="3" groups=[
+"playables",
+] instance=ExtResource( 2 )]
+
+position = Vector2( 1423.24, 336.83 )
+scale = Vector2( 0.482716, 0.482716 )
+script = ExtResource( 3 )
+
+[node name="Sapo4" parent="." index="4" groups=[
+"playables",
+] instance=ExtResource( 2 )]
+
+position = Vector2( 1042.79, 219.2 )
+scale = Vector2( 0.482716, 0.482716 )
+script = ExtResource( 3 )
+
+[node name="Tipito" parent="." index="5" groups=[
 "playables",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 1633.28, 1061.82 )
+position = Vector2( 1907.14, 1183.13 )
 scale = Vector2( 0.507477, 0.507477 )
 script = ExtResource( 5 )
 
-[node name="Tipito2" parent="." index="4" groups=[
+[node name="Tipito2" parent="." index="6" groups=[
 "playables",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 129.211, 1063.9 )
+position = Vector2( 103.48, 1188.88 )
 scale = Vector2( 0.507477, 0.507477 )
 script = ExtResource( 5 )
 
-[node name="TileMaps" type="Node2D" parent="." index="5"]
+[node name="Nube" parent="." index="7" groups=[
+"playables",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 1910.24, 129.39 )
+scale = Vector2( 1.64234, 1.64234 )
+
+[node name="Nube2" parent="." index="8" groups=[
+"playables",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 149.383, 143.75 )
+scale = Vector2( 1.64234, 1.64234 )
+
+[node name="TileMaps" type="Node2D" parent="." index="9"]
 
 [node name="Glass" type="TileMap" parent="TileMaps" index="0" groups=[
 "block",
 ]]
 
 position = Vector2( -380.79, -130.807 )
-mode = 0
-tile_set = ExtResource( 6 )
-cell_size = Vector2( 128, 128 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 65538, 1, 0, 65555, 1, 0, 131074, 1, 0, 131091, 1, 0, 196610, 1, 0, 196619, 0, 0, 196627, 1, 0, 262146, 1, 0, 262147, 0, 0, 262148, 2, 0, 262150, 3, 0, 262151, 2, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262163, 1, 0, 327682, 1, 0, 327699, 1, 0, 393218, 1, 0, 393219, 3, 0, 393220, 0, 0, 393221, 2, 0, 393235, 1, 0, 458754, 1, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458771, 1, 0, 524290, 1, 0, 524295, 3, 0, 524296, 0, 0, 524297, 2, 0, 524307, 1, 0, 589826, 1, 0, 589843, 1, 0, 655362, 1, 0, 655379, 1, 0, 720898, 1, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0 )
-_sections_unfolded = [ "Cell", "Collision" ]
-
-[node name="Decoration" type="TileMap" parent="TileMaps" index="1"]
-
-visible = false
-position = Vector2( -645.795, 29.3543 )
 mode = 0
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 128, 128 )
@@ -132,24 +153,32 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 196617, 0, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196624, 3, 0, 196625, 0, 0, 196628, 1, 0, 196629, 1, 0, 196630, 2, 0, 196631, 1, 0, 196633, 3, 0, 196635, 0, 0, 196636, 0, 0, 196639, 3, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196646, 3, 0, 196661, 0, 0, 196662, 1, 0, 196663, 1, 0, 196664, 2, 0, 196667, 2, 0, 196668, 3, 0, 196669, 0, 0, 196670, 0, 0, 196671, 3, 0, 262185, 5, 0, 262186, 5, 0, 262187, 5, 0, 262188, 5, 0, 262189, 5, 0, 262190, 5, 0, 262191, 5, 0, 262192, 5, 0, 262193, 5, 0, 262194, 5, 0, 262195, 5, 0, 327721, 4, 0, 327722, 4, 0, 327723, 4, 0, 327724, 4, 0, 327725, 4, 0, 327726, 4, 0, 327727, 4, 0, 327728, 4, 0, 327729, 4, 0, 327730, 4, 0, 327731, 4, 0, 393257, 4, 0, 393258, 4, 0, 393259, 4, 0, 393260, 4, 0, 393261, 4, 0, 393262, 4, 0, 393263, 4, 0, 393264, 4, 0, 393265, 4, 0, 393266, 4, 0, 393267, 4, 0 )
+tile_data = PoolIntArray( 65538, 1, 0, 65555, 1, 0, 131074, 1, 0, 131091, 1, 0, 196610, 1, 0, 196619, 0, 0, 196627, 1, 0, 262146, 1, 0, 262147, 0, 0, 262148, 2, 0, 262150, 3, 0, 262151, 2, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262163, 1, 0, 327682, 1, 0, 327699, 1, 0, 393218, 1, 0, 393220, 0, 0, 393221, 2, 0, 393235, 1, 0, 458754, 1, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458771, 1, 0, 524290, 1, 0, 524295, 3, 0, 524296, 0, 0, 524297, 2, 0, 524307, 1, 0, 589826, 1, 0, 589843, 1, 0, 655362, 1, 0, 655379, 1, 0, 720898, 1, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="Nube" parent="." index="6" groups=[
-"playables",
-] instance=ExtResource( 8 )]
+[node name="Decoration" type="TileMap" parent="TileMaps" index="1"]
 
-position = Vector2( 1603.3, 169.825 )
-scale = Vector2( 1.64234, 1.64234 )
+position = Vector2( -645.795, 29.3543 )
+mode = 0
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 196635, 0, 0, 196636, 0, 0, 196639, 3, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196646, 3, 0, 196661, 0, 0, 196662, 1, 0, 196663, 1, 0, 196664, 2, 0, 196667, 2, 0, 196668, 3, 0, 196669, 0, 0, 196670, 0, 0, 196671, 3, 0, 262185, 5, 0, 262186, 5, 0, 262187, 5, 0, 262188, 5, 0, 262189, 5, 0, 262190, 5, 0, 262191, 5, 0, 262192, 5, 0, 262193, 5, 0, 262194, 5, 0, 262195, 5, 0, 327721, 4, 0, 327722, 4, 0, 327723, 4, 0, 327724, 4, 0, 327725, 4, 0, 327726, 4, 0, 327727, 4, 0, 327728, 4, 0, 327729, 4, 0, 327730, 4, 0, 327731, 4, 0, 393257, 4, 0, 393258, 4, 0, 393259, 4, 0, 393260, 4, 0, 393261, 4, 0, 393262, 4, 0, 393263, 4, 0, 393264, 4, 0, 393265, 4, 0, 393266, 4, 0, 393267, 4, 0 )
+_sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="Nube2" parent="." index="7" groups=[
-"playables",
-] instance=ExtResource( 8 )]
-
-position = Vector2( 188.43, 155.303 )
-scale = Vector2( 1.64234, 1.64234 )
-
-[node name="label" type="Label" parent="." index="8"]
+[node name="label" type="Label" parent="." index="10"]
 
 visible = false
 anchor_left = 0.0
@@ -173,7 +202,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="restart" type="Button" parent="." index="9"]
+[node name="restart" type="Button" parent="." index="11"]
 
 pause_mode = 2
 visible = false
@@ -181,10 +210,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 839.0
-margin_top = 895.0
-margin_right = 1051.0
-margin_bottom = 967.0
+margin_left = 774.0
+margin_top = 757.0
+margin_right = 1140.0
+margin_bottom = 881.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -192,6 +221,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -199,6 +229,20 @@ group = null
 text = "Restart"
 flat = false
 align = 1
-_sections_unfolded = [ "Pause", "Theme", "custom_colors" ]
+_sections_unfolded = [ "Pause", "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="Arbol" parent="." index="12" groups=[
+"playables",
+] instance=ExtResource( 9 )]
+
+position = Vector2( 738.239, 776.451 )
+scale = Vector2( 0.478624, 0.478624 )
+
+[node name="Arbol2" parent="." index="13" groups=[
+"playables",
+] instance=ExtResource( 9 )]
+
+position = Vector2( 1532.83, 651.549 )
+scale = Vector2( 0.478624, 0.478624 )
 
 

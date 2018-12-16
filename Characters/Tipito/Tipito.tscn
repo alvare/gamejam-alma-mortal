@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/tipito1.png" type="Texture" id=1]
-[ext_resource path="res://Assets/tipito2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/tipito3.png" type="Texture" id=3]
-[ext_resource path="res://Assets/tipito-ataque1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/tipito-ataque2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/tipito-ataque3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/tipito-ataque1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/tipito-ataque2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/tipito-ataque3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/tipito2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/tipito3.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -15,19 +15,19 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "move",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "attack",
 "speed": 5.0
 } ]
 

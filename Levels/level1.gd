@@ -20,7 +20,7 @@ func _ready():
     
     var lives_left_x = 100
     var lives_right_x = 1650
-    for x in range(1):
+    for x in range(4):
         p1_lives.append(render_live(100*x + lives_left_x))
         p2_lives.append(render_live(100*x + lives_right_x))
         
