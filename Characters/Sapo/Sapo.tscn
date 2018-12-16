@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/sapo1.png" type="Texture" id=1]
-[ext_resource path="res://Assets/sapo2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sapo-ataque1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sapo-ataque2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sapo-ataque3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sapo3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sapo2.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -11,12 +15,17 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "move",
 "speed": 5.0
@@ -34,12 +43,12 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="spr" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="col" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 1.01396, 2.16098 )
 scale = Vector2( 7.65485, 4.71817 )
