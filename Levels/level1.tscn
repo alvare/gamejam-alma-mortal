@@ -72,7 +72,7 @@ _sections_unfolded = [ "Pause" ]
 "playables",
 ] instance=ExtResource( 2 )]
 
-position = Vector2( 563.452, 349.343 )
+position = Vector2( 1106.87, 454.631 )
 scale = Vector2( 0.482716, 0.482716 )
 script = ExtResource( 3 )
 
@@ -80,7 +80,7 @@ script = ExtResource( 3 )
 "playables",
 ] instance=ExtResource( 2 )]
 
-position = Vector2( 173.43, 594.144 )
+position = Vector2( 220.979, 1086.62 )
 scale = Vector2( 0.482716, 0.482716 )
 script = ExtResource( 3 )
 
@@ -88,7 +88,7 @@ script = ExtResource( 3 )
 "playables",
 ] instance=ExtResource( 2 )]
 
-position = Vector2( 1423.24, 336.83 )
+position = Vector2( -271.552, 724.017 )
 scale = Vector2( 0.482716, 0.482716 )
 script = ExtResource( 3 )
 
@@ -96,7 +96,7 @@ script = ExtResource( 3 )
 "playables",
 ] instance=ExtResource( 2 )]
 
-position = Vector2( 1042.79, 219.2 )
+position = Vector2( 2187.37, 721.864 )
 scale = Vector2( 0.482716, 0.482716 )
 script = ExtResource( 3 )
 
@@ -104,7 +104,7 @@ script = ExtResource( 3 )
 "playables",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 1907.14, 1183.13 )
+position = Vector2( 2209.42, 1434.46 )
 scale = Vector2( 0.507477, 0.507477 )
 script = ExtResource( 5 )
 
@@ -112,7 +112,7 @@ script = ExtResource( 5 )
 "playables",
 ] instance=ExtResource( 4 )]
 
-position = Vector2( 103.48, 1188.88 )
+position = Vector2( -202.194, 1447 )
 scale = Vector2( 0.507477, 0.507477 )
 script = ExtResource( 5 )
 
@@ -120,17 +120,26 @@ script = ExtResource( 5 )
 "playables",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 1910.24, 129.39 )
+position = Vector2( 2124.21, 319.587 )
 scale = Vector2( 1.64234, 1.64234 )
 
-[node name="Nube2" parent="." index="8" groups=[
+[node name="Nube3" parent="." index="8" groups=[
 "playables",
 ] instance=ExtResource( 6 )]
 
-position = Vector2( 149.383, 143.75 )
+position = Vector2( 962.651, 306.002 )
 scale = Vector2( 1.64234, 1.64234 )
 
-[node name="TileMaps" type="Node2D" parent="." index="9"]
+[node name="Nube2" parent="." index="9" groups=[
+"playables",
+] instance=ExtResource( 6 )]
+
+position = Vector2( -444.983, 313.569 )
+scale = Vector2( 1.64234, 1.64234 )
+
+[node name="TileMaps" type="Node2D" parent="." index="10"]
+
+position = Vector2( -2.32007, 245.933 )
 
 [node name="Glass" type="TileMap" parent="TileMaps" index="0" groups=[
 "block",
@@ -153,12 +162,12 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 65538, 1, 0, 65555, 1, 0, 131074, 1, 0, 131091, 1, 0, 196610, 1, 0, 196619, 0, 0, 196627, 1, 0, 262146, 1, 0, 262147, 0, 0, 262148, 2, 0, 262150, 3, 0, 262151, 2, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262163, 1, 0, 327682, 1, 0, 327699, 1, 0, 393218, 1, 0, 393220, 0, 0, 393221, 2, 0, 393235, 1, 0, 458754, 1, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458771, 1, 0, 524290, 1, 0, 524295, 3, 0, 524296, 0, 0, 524297, 2, 0, 524307, 1, 0, 589826, 1, 0, 589843, 1, 0, 655362, 1, 0, 655379, 1, 0, 720898, 1, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0 )
+tile_data = PoolIntArray( 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 655368, 0, 0, 655369, 0, 0, 655373, 0, 0, 655374, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 851966, 1, 0, 851967, 1, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0, 786455, 1, 0 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Decoration" type="TileMap" parent="TileMaps" index="1"]
 
-position = Vector2( -645.795, 29.3543 )
+position = Vector2( -648.115, 29.3543 )
 mode = 0
 tile_set = ExtResource( 8 )
 cell_size = Vector2( 128, 128 )
@@ -178,7 +187,7 @@ format = 1
 tile_data = PoolIntArray( 196635, 0, 0, 196636, 0, 0, 196639, 3, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196646, 3, 0, 196661, 0, 0, 196662, 1, 0, 196663, 1, 0, 196664, 2, 0, 196667, 2, 0, 196668, 3, 0, 196669, 0, 0, 196670, 0, 0, 196671, 3, 0, 262185, 5, 0, 262186, 5, 0, 262187, 5, 0, 262188, 5, 0, 262189, 5, 0, 262190, 5, 0, 262191, 5, 0, 262192, 5, 0, 262193, 5, 0, 262194, 5, 0, 262195, 5, 0, 327721, 4, 0, 327722, 4, 0, 327723, 4, 0, 327724, 4, 0, 327725, 4, 0, 327726, 4, 0, 327727, 4, 0, 327728, 4, 0, 327729, 4, 0, 327730, 4, 0, 327731, 4, 0, 393257, 4, 0, 393258, 4, 0, 393259, 4, 0, 393260, 4, 0, 393261, 4, 0, 393262, 4, 0, 393263, 4, 0, 393264, 4, 0, 393265, 4, 0, 393266, 4, 0, 393267, 4, 0 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="label" type="Label" parent="." index="10"]
+[node name="label" type="Label" parent="." index="11"]
 
 visible = false
 anchor_left = 0.0
@@ -202,7 +211,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="restart" type="Button" parent="." index="11"]
+[node name="restart" type="Button" parent="." index="12"]
 
 pause_mode = 2
 visible = false
@@ -231,18 +240,18 @@ flat = false
 align = 1
 _sections_unfolded = [ "Pause", "Theme", "custom_colors", "custom_fonts" ]
 
-[node name="Arbol" parent="." index="12" groups=[
+[node name="Arbol" parent="." index="13" groups=[
 "playables",
 ] instance=ExtResource( 9 )]
 
-position = Vector2( 738.239, 776.451 )
+position = Vector2( 1088.07, 902.117 )
 scale = Vector2( 0.478624, 0.478624 )
 
-[node name="Arbol2" parent="." index="13" groups=[
+[node name="Arbol2" parent="." index="14" groups=[
 "playables",
 ] instance=ExtResource( 9 )]
 
-position = Vector2( 1532.83, 651.549 )
+position = Vector2( 323.72, 637.964 )
 scale = Vector2( 0.478624, 0.478624 )
 
 
