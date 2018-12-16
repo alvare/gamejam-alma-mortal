@@ -54,7 +54,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="level1" type="Node"]
+[node name="level1" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -159,7 +159,6 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0

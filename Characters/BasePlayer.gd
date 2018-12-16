@@ -19,6 +19,8 @@ var k_right = ""
 var k_left = ""
 var k_attack = ""
 
+var is_p1
+
 var attacking = false
 
 func _ready():
@@ -31,27 +33,29 @@ func _onAnimationEnded():
         attacking = false
         $attackr/col.disabled = true
         $attackl/col.disabled = true
-    
+
 func set_p1():
     enable()
+    is_p1 = true
     k_up = "ui_up"
     k_right = "ui_right"
     k_left = "ui_left"
     k_attack = "ui_down"
-    
+
 func set_p2():
     enable()
+    is_p1 = false
     k_up = "ui_w"
     k_right = "ui_d"
     k_left = "ui_a"
     k_attack = "ui_s"
-        
+
 func unmap():
     k_up = ""
     k_right = ""
     k_left = ""
     k_attack = ""
-    
+
     
 func enable():
     $col.disabled = false
@@ -90,8 +94,7 @@ func _move(delta):
         else:
             lel = $attackl
         for x in lel.get_overlapping_bodies():
-            print(x)
-#            get_tree().get_root().get_node("level1").kill(x)
+            get_tree().get_root().get_node("level1").kill(x)
         direction.x = 0
     
     if direction.x > 0:
