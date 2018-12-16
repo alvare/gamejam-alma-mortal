@@ -46,7 +46,7 @@ extents = Vector2( 62.0045, 91.8848 )
 custom_solver_bias = 0.0
 extents = Vector2( 50.5037, 75.6949 )
 
-[node name="Tipito" type="KinematicBody2D" index="0"]
+[node name="Tipito" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
