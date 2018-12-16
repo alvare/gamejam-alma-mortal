@@ -1,7 +1,6 @@
 extends Node
 
 var lives = 4
-var coins = 0
 var punto
 
 func _ready():
