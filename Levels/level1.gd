@@ -12,6 +12,7 @@ var p1_lives = []
 var p2_lives = []
 
 func _ready():
+    randomize()
     $Sapo.set_p1()
     $Tipito.set_p2()
     var lives_left_x = 100
