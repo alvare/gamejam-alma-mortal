@@ -107,7 +107,8 @@ func _move(delta):
         else:
             lel = $attackl
         for x in lel.get_overlapping_bodies():
-            get_tree().get_root().get_node("level1").kill(x)
+            if not x.is_in_group("floor"):
+                get_tree().get_root().get_node("level1").kill(x)
         direction.x = 0
     
     if direction.x > 0:
@@ -143,7 +144,8 @@ func _float(delta):
         else:
             lel = $attackl
         for x in lel.get_overlapping_bodies():
-            get_tree().get_root().get_node("level1").kill(x)
+            if not x.is_in_group("floor"):
+                get_tree().get_root().get_node("level1").kill(x)
         direction.x = 0
     
     if direction.x > 0:

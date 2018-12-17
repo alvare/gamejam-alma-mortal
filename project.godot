@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Indie Libre - Platformer 2D"
+config/name="Alma Mortal"
 run/main_scene="res://Levels/level1.tscn"
 config/icon="res://Graphics/PNG/Players/Variable sizes/Blue/alienBlue_swim1.png"
 
