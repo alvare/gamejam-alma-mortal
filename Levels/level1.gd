@@ -75,11 +75,3 @@ func kill(x):
         node.set_p1()
     else:
         node.set_p2()
-
-func _process(delta):
-    if Input.is_action_pressed("ui_space"):
-        get_node(player1).deactivate()
-        var playables = get_nodes_in_group("playables")
-        var node = playables[randi() % playables.size()]
-        player1 = node
-        get_node(node).set_p1()
